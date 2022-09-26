@@ -1,0 +1,23 @@
+.flex-container {
+	/* The flex container becomes flexible by setting the display property to flex: */
+	display: flex; 
+	/* The flex-wrap property specifies whether the flex items should wrap or not.*/
+ 	flex-wrap: wrap;
+}
+
+.cell {
+	/* The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items. */
+	flex-grow: 0.25;
+	border: 1px solid;
+}
+
+@media (max-width: 720px) {
+  .cell {
+    width: calc(50% - 2px)
+  }
+}
+
+@media (max-width: 360px) {
+  .cell {
+    width: calc(100% - 2px)
+  }
