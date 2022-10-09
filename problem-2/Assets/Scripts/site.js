@@ -49,8 +49,8 @@ let createNotes = () => {
         <span class="fw-bold">${data.title}</span>
         <p>${data.body}</p>
         <span class="options">
-        <button name="edit" type="button">Edit</button>
-        <button onClick = "deleteNote(this)" type="button">Delete</button> 
+            <button onClick = "editNote(this)" data-bs-toggle="modal" data-bs-target="#form" name="edit" type="button">Edit</button>
+            <button onClick = "deleteNote(this)" type="button">Delete</button> 
         </span>
     </div>
     `;
@@ -61,6 +61,16 @@ let createNotes = () => {
 let deleteNote = (e) => {
     e.parentElement.parentElement.remove();
 }
+
+let editNote = (e) => {
+    let selectedNote = e.parentElement.parentElement;
+
+    titleInput.value = selectedNote.children[0].innerHTML;
+    bodyInput.value = selectedNote.children[1].innerHTML;
+    colorInput.value = selectedNote.children[2].innerHTML;
+
+    selectedNote.remove();
+};
 
 let resetForm = () => {
     titleInput.value = "";
