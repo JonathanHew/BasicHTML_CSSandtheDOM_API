@@ -50,7 +50,7 @@ let createNotes = () => {
         <p>${data.body}</p>
         <span class="options">
         <button name="edit" type="button">Edit</button>
-        <button name="delete" type="button">Delete</button> 
+        <button onClick = "deleteNote(this)" type="button">Delete</button> 
         </span>
     </div>
     `;
@@ -58,8 +58,13 @@ let createNotes = () => {
     resetForm();
 };
 
+let deleteNote = (e) => {
+    e.parentElement.parentElement.remove();
+}
+
 let resetForm = () => {
     titleInput.value = "";
     bodyInput.value = "";
     colorInput.value = "red";
 };
+
