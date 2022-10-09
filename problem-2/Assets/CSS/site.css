@@ -1,47 +1,51 @@
-#wrapper
+.app
 {
-	width: 100%;
-	margin: 0 auto;
+	margin: auto;
+	width: 80%;
+	height: auto;
+	border: 5px solid red;
+	padding: 15px;
 }
 
-#note-form
+#addNew
 {
-	width: 100%;
-	height: 50%;
+	display: flex;
+	background-color: aqua;
 }
 
-#form-title
+#addNew button
 {
-	font-size: 50px;
-	font-family: Arial, Helvetica, sans-serif;
+	margin:  auto;
+	width: 250px;
+	height: 60px;
 }
 
-label
+#notes
 {
-	font-size: 15px
-  	width: 100%;
- 	margin-bottom: 10px;
-	display: block;
+	display: grid;
+	gap: 15px;
 }
 
-input 
+#notes div
 {
-	font-size: 15px;
-	width: 300px;  
-	margin-bottom: 15px;
-	padding: 8px 6px;
-	display: block;
+	background-color: bisque;
+	border: 3px solid aqua;
+	padding: 5px;
+	display: grid;
+	gap: 5px;
+	border-radius: 10px;
+	width: 45%;
+	margin: auto;
 }
 
-textarea 
+.options
 {
-  font-size: 15px;
-  display: block;
-  margin-bottom: 15px;
-  padding: 8px 6px;
+	justify-self: center;
+	display: flex;
+	gap: 15px;
 }
 
-textarea.is-empty 
+.options button
 {
-  border: 1px solid tomato;
+	cursor: pointer;
 }
