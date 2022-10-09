@@ -4,6 +4,7 @@ let msg = document.getElementById("msg");
 let bodyInput = document.getElementById("bodyInput");
 let colorInput = document.getElementById("colorInput");
 let notes = document.getElementById("notes");
+let addBtn = document.getElementById("addBtn");
 
 
 form.addEventListener('submit', (e) => {
@@ -22,6 +23,12 @@ let formValidation = () =>{
         console.log("Success!!");
         msg.innerHTML = "";
         acceptData();
+        addBtn.setAttribute("data-bs-dismiss","modal");
+        addBtn.click();
+        
+        (()=>{
+            addBtn.setAttribute("data-bs-dismiss","");
+        })()
     }
 };
 
@@ -47,4 +54,12 @@ let createNotes = () => {
         </span>
     </div>
     `;
+
+    resetForm();
+};
+
+let resetForm = () => {
+    titleInput.value = "";
+    bodyInput.value = "";
+    colorInput.value = "red";
 };
