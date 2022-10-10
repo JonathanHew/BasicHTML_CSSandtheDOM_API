@@ -24,6 +24,17 @@ let neverGonnaGive = [
     "Never gonna tell a lie and hurt you"
 ];
 
+let colors = [
+	"#FF1493",
+	"#FF00FF",
+	"#FF69B4",
+	"#FFB6C1",
+	"#FF00FF",
+	"#DB7093",
+	"#FFC0CB",
+
+];
+
 //reverse through array of images
 //getting random image from the array we created before (we use math.floor and math.random to grab a random index in the array)
 const imgs = document.getElementsByTagName("img");
@@ -58,4 +69,16 @@ for (let i = 0; i < inputs.length; i++){
 const html = document.getElementsByTagName("html");
 for (let i = 0; i < html.length; i++){
     html[i].lang = "es";
+}
+
+//change all divs background color to a shade of pink
+const divs = document.getElementsByTagName("div");
+for (let i = 0; i < divs.length; i++){
+    divs[i].style.backgroundColor = colors[i%7];
+}
+
+//change all span text to have 2 smiley faces at the end of it 
+const spans = document.getElementsByTagName("span");
+for (let i = 0; i < spans.length; i++){
+    spans[i].innerText += " :) :)";
 }
